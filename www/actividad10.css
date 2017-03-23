@@ -1,0 +1,33 @@
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  width: 100%;
+  background-color: #efefef;
+  text-align: center;
+}
+
+*{
+	font-family: Arial;
+}
+
+.input_1 {
+	width:80%;
+	height: 15%;
+	
+	
+}
+
+.btn{
+	background-color: #86C99F;
+	border: 1px solid green;
+	border-radius: 3px;
+}
+
+h1{
+	background-color: #86C99F;
+	
+}

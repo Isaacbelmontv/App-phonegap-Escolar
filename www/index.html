@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="stylesheet" type="text/css" href="actividad10.css">
+        <title>Blank App</title>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script>
+        app.initialize();//Linea mágica que inicizialisa cordova, NO OLVIDAR para plugins
+        	function buscar(){
+            var x = document.getElementById("nombre");
+            var options = new ContactFindOptions();
+            options.filter = x.value;
+            options.multiple=true;
+            var fields = ["displayName"];
+            navigator.contacts.find(fields, onSuccess, onError, options);
+
+          }
+          // onSuccess: Get a snapshot of the current contacts
+
+          function onSuccess(contacts) {
+            alert('exito');
+          var text ="";
+          for (var i = 0; i < contacts.length; i++) {
+              text+="<li>";
+              text+=contacts[i].displayName;
+              text+="</li>";
+              }
+              document.getElementById("contactos").innerHTML = text;
+
+           }
+
+        // onError: Failed to get the contacts
+         function onError(contactError) {
+                   alert('onError!');
+          }
+
+
+        </script>
+    </head>
+    <body>
+    	<div align="center">
+    	<h1> Contactos</h1>
+      </div>
+	<center>
+      <input class="input_1" type="text" name="name" id="nombre">
+      <p>
+      <button class="btn" name"calcular" onclick="buscar()">Buscar</button>
+	</center>
+
+        <ul id="contactos"> </ul>
+
+        <div class="footer">Luisa Beatriz García Alva</div>
+    </body>
+</html>
